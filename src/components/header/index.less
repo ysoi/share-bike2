@@ -1,0 +1,47 @@
+.wrap{
+    
+    .first{
+        height:60px;
+        line-height:60px;
+        
+        font-size:16px;
+        border-bottom: 2px solid hsl(30,50%,50%);
+    }
+    .second{
+        height:40px;
+        line-height:40px;
+      
+        .left .crumb{
+            margin-left:50px;
+            font-size:20px;
+           
+           
+            &::after{
+                    content:'';
+                    display:block;
+                   
+                    border:20px solid transparent ;
+                    border-top:20px solid #fff;
+                    width:0;
+                    height:0;
+          
+                }  
+          
+        }
+        .right .text{
+            font-size:16px;
+            font-weight:lighter;
+            margin-right:10px;
+        }
+    }
+    
+}
+.wrap .first .text{
+    .user{
+        color:yellowgreen;
+        margin-right:20px;
+    }
+    .quit{
+        color:hsl(30,50%,50%);
+    }
+}
