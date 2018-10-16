@@ -3,8 +3,9 @@ import "./index.less";
 import {Breadcrumb,message} from "antd";
 import  util from "../../utils/index";
 import axios from "axios";
+import {connect} from "react-redux";
 
-export default class Header extends Component{
+class Header extends Component{
     state={
         date:"",
         
@@ -47,6 +48,7 @@ export default class Header extends Component{
    componentWillMount(){
      this.getTime();
      this.getWeather();
+    
    }
     render(){
       
@@ -63,7 +65,7 @@ export default class Header extends Component{
                 <div className="second clearfix">
                     <div className="left fll">
                        <Breadcrumb className="crumb">
-                            <Breadcrumb.Item className="homePage">首页</Breadcrumb.Item>
+                            <Breadcrumb.Item className="homePage">{this.props.menuText.menuItemText}</Breadcrumb.Item>
                           
                        </Breadcrumb>
                     </div>
@@ -77,3 +79,10 @@ export default class Header extends Component{
         )
     }
 }
+export default connect(
+    function mapStateToProps(state){
+        return{
+            menuText:state
+        }
+    }
+)(Header)

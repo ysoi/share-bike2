@@ -3,14 +3,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Router from './router';
-
+import store from "./redux/store";
 import App from './App';
 import './style/common.less';
-
+import {Provider} from "react-redux";
 ReactDOM.render(
-    <App>
-        <Router/>
-    </App>
+    <Provider store={store}>
+        <App>
+            <Router/>
+        </App>
+    </Provider>
+    
 , document.getElementById('root'));
 
 
